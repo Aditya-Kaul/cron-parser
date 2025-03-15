@@ -127,7 +127,12 @@ def expand_expression(expression: str, options: List[int]) -> List[int]:
     
     if re.match(r"^\d{1,2}(?:,\d{1,2})*$", expression):
         values = [int(x) for x in expression.split(",")]
-        return [x for x in values if x in options]
+        # print(values)
+        res_val = [x for x in values if x in options]
+        if res_val:
+            return res_val
+        else:
+            raise ValueError(f"Value {values} not in valid options for this component")
     
     interval_matches = re.search(r"^(\*|\d{1,2}-\d{1,2})/(\d{1,2})$", expression)
     
