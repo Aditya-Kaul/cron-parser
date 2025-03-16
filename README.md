@@ -77,6 +77,16 @@ A cron expression consists of six fields, separated by spaces:
 - `,`: list of values
 - `/`: step values
 
+## Test Cases
+```bash
+python3 -m unittest app_test.py
+```
+To Test class or feature specific test
+Example:
+```bash
+python3 -m unittest app_test.TestExpandCronExp
+```
+
 ## Error Handling
 
 The application validates expressions and provides informative error messages for problems like:
